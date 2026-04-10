@@ -3,8 +3,6 @@ root: ~/Repositories/
 
 windows:
   - front-end:
-      root: ~/Repositories/pharmacy/frontend
+      root: ~/Repositories/
   - back-end:
-      root: ~/Repositories/pharmacy/backend
-  - devops:
-      root: ~/Repositories/pharmacy/pharmacy/
+      root: ~/Repositories/

@@ -62,3 +62,10 @@ export PATH=$PATH:/opt/gradle/bin
 alias glor="git log --oneline --reverse"
 alias c="clear"
 alias vi="nvim"
+
+# bun completions
+[ -s "/Users/thienannguyen/.bun/_bun" ] && source "/Users/thienannguyen/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
