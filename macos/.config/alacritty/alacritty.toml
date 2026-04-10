@@ -1,0 +1,20 @@
+[general]
+import = ["~/.config/alacritty/colors.toml"]
+
+[font]
+normal = { family = "JetBrains Mono Nerd Font", style = "Normal" }
+size = 13.5
+offset = { x = 0, y = 2 }
+
+[window]
+padding = { x = 10, y = 10 }
+decorations = "None"
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+vi_mode_style = { "Beam" }
+
+[mouse]
+hide_when_typing = true
