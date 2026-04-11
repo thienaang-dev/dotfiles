@@ -32,9 +32,19 @@ alias vi="nvim"
 alias la="ls -lAFh"
 alias t="tmux"
 alias tl="tmux ls"
-alias ta="tmux attach"
+alias ta="tmux attach -t"
 alias ts="tmux new-session -s"
+alias tks="tmux kill-server"
+alias tkw="tmux kill-window -t"
 alias mux="tmuxinator"
+
+# Deletes all local branch except branch in parameter
+gbdae() {
+  if [ -n "$1" ]
+  then
+    gb | grep -v "$1" | xargs git branch -D
+  fi
+}
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
