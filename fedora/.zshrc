@@ -1,29 +1,17 @@
-# Disable auto update to improve performance
-DISABLE_AUTO_UPDATE="true"
-DISABLE_MAGIC_FUNCTIONS="true"
-DISABLE_COMPFIX="true"
-
 # Source antidote
 source $HOME/.antidote/antidote.zsh
+antidote load
 
 # Smarter completion initialization
 autoload -Uz compinit
-if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
-  compinit
-else
-  compinit -C
-fi
-
-# Load antidote
-antidote load
+compinit -C
 
 # Starts starship
 eval "$(starship init zsh)"
 
 # User specific environment
 typeset -U path PATH
-path=("$HOME/.local/bin" "$HOME/bin" $path)
-path+=("/opt/gradle/bin")
+path=("$HOME/.local/bin" "$HOME/bin" "/opt/gradle/bin" $path)
 export PATH
 
 # Settings
@@ -36,10 +24,15 @@ bindkey '^n' history-search-forward
 # Exports
 export EDITOR="nvim"
 export VISUAL="nvim"
-export JAVA_HOME=/usr/lib/jvm/java-25-openjdk
+export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which javac))))
 
 # Aliases
 alias glor="git log --oneline --reverse"
 alias c="clear"
 alias vi="nvim"
 alias la="ls -lAFh"
+alias t="tmux"
+alias tl="tmux ls"
+alias ta="tmux attach"
+alias ts="tmux new-session -s"
+alias mux="tmuxinator"
