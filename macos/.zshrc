@@ -16,6 +16,7 @@ export PATH
 
 # Settings
 setopt AUTO_CD
+ulimit -n 8192
 
 # Keybinds
 bindkey '^p' history-search-backward
