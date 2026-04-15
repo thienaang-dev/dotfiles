@@ -4,7 +4,7 @@ import = ["~/.config/alacritty/colors.toml"]
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Medium" }
 bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
-size = 16
+size = 14
 offset = { x = 0, y = 2 }
 
 [window]
