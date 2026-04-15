@@ -1,5 +1,5 @@
 [general]
-import = ["~/.config/alacritty/colors.toml"]
+import = ["~/.config/alacritty/color.toml"]
 
 [font]
 normal = { family = "JetBrains Mono Nerd Font", style = "Normal" }
