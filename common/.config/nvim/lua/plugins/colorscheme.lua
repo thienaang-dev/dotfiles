@@ -1,22 +1,23 @@
 return {
   {
-    "ellisonleao/gruvbox.nvim",
+    "sainnhe/everforest",
     lazy = false,
     priority = 1000,
-    ---@module 'gruvbox'
-    ---@type GruvboxConfig
-    opts = {
-      contrast = "soft",
-      transparent_mode = true,
-    },
-    config = function(_, opts)
-      require("gruvbox").setup(opts)
-      vim.cmd.colorscheme("gruvbox")
+    config = function()
+      vim.g.everforest_background = "medium"
+      vim.g.everforest_transparent_background = 2
+      vim.g.everforest_enable_bold = 1
+      vim.g.everforest_enable_italic = 1
+      vim.g.everforest_diagnostic_text_highlight = 1
+      vim.g.everforest_diagnostic_line_highlight = 1
+      vim.g.everforest_diagnostic_virtual_text = "colored"
+
+      vim.cmd.colorscheme("everforest")
     end,
   },
   {
     "LazyVim/LazyVim",
-    opts = { colorscheme = "gruvbox" },
+    opts = { colorscheme = "everforest" },
   },
 
   -- Disable plugins
