@@ -23,6 +23,12 @@ tasks:
       rm -rf $HOME/.zshrc
     reboot-required: true
 
+  - name: "starship"
+    description: "Setup starship (prompt)"
+    command: |
+      curl -sS https://starship.rs/install.sh | sh
+    reboot-required: false
+
   - name: "antidote"
     description: "Setup antidote (zsh plugin manager)"
     command: |
@@ -33,10 +39,9 @@ tasks:
     description: "Setup config files"
     command: |
       cd $HOME/dotfiles &&
-      stow fedora common &&
+      stow macos common &&
       git config --global user.name thienaang.dev &&
-      git config --global user.email thienaang.dev@gmail.com &&
-      gh auth login
+      git config --global user.email thienaang.dev@gmail.com
     reboot-required: true
 
   - name: "SSH"
