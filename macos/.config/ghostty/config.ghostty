@@ -2,7 +2,7 @@ theme = light: light.ghostty, dark: dark.ghostty
 
 font-family = MartianMono Nerd Font
 font-style = Medium
-font-size = 12
+font-size = 15
 font-thicken = true
 adjust-cell-height = 20%
 
