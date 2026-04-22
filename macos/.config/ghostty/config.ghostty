@@ -1,4 +1,4 @@
-theme = light:everforest-light-medium.ghostty, dark:everforest-dark-medium.ghostty
+theme = light: light.ghostty, dark: dark.ghostty
 
 font-family = MartianMono Nerd Font
 font-style = Medium
