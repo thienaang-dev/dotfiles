@@ -1,6 +1,6 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
-font-family = MartianMono Nerd Font
+font-family = JetBrainsMono Nerd Font
 font-style = Medium
 font-size = 15
 font-thicken = true
