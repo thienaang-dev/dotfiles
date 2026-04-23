@@ -2,11 +2,14 @@ theme = light: light.ghostty, dark: dark.ghostty
 
 font-family = JetBrainsMono Nerd Font
 font-style = Medium
+font-feature = -calt, -liga, -dlig
 font-size = 15
 font-thicken = true
 adjust-cell-height = 20%
 
 title = " "
+window-padding-x = 2,5
+window-padding-y = 0
 window-padding-balance = true
 window-decoration = none
 
