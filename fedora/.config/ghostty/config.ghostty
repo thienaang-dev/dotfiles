@@ -1,8 +1,9 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
-font-family = JetBrainsMono Nerd Font
+font-family = JetBrains Mono
 font-style = Medium
 font-feature = -calt, -liga, -dlig
+font-variation-bold = wght=900
 font-size = 12
 font-thicken = true
 adjust-cell-height = 20%
