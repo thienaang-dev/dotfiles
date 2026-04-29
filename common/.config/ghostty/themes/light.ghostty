@@ -1,6 +1,3 @@
-# Everforest light medium theme for Ghostty
-## name: everforest-light-medium
-
 palette = 0=#5c6a72
 palette = 1=#f85552
 palette = 2=#8da101
@@ -18,8 +15,8 @@ palette = 13=#df69ba
 palette = 14=#35a77c
 palette = 15=#dfddc8
 
-background=#fdf6e3
+background=#f8f0dc
 foreground=#5c6a72
 cursor-color=#5c6a72
-selection-foreground=#fdf6e3
+selection-foreground=#f8f0dc
 selection-background=#5c6a72
