@@ -11,13 +11,8 @@ tasks:
   - name: "Packages"
     description: "Setup all necessary packages for development"
     command: |
-      sudo dnf -y install gh stow tmux alacritty nodejs java-25-openjdk npm gcc make git ripgrep fd-find unzip &&
-      sudo flatpak install -y postman spotify &&
-      cd $HOME/dots &&
-      stow neovim tmux ideavim &&
-      git config --global user.name thienaang &&
-      git config --global user.email thienaang.dev@gmail.com &&
-      gh auth login
+      sudo dnf -y install gh stow tmux alacritty nodejs java-25-openjdk npm neovim gcc make git ripgrep fd-find unzip &&
+      sudo flatpak install -y postman spotify
     reboot-required: false
 
   - name: "Zsh"
@@ -27,6 +22,18 @@ tasks:
       chsh -s /usr/bin/zsh &&
       rm -rf $HOME/.zshrc
     reboot-required: true
+
+  - name: "starship"
+    description: "Setup starship (prompt)"
+    command: |
+      curl -sS https://starship.rs/install.sh | sh
+    reboot-required: false
+
+  - name: "antidote"
+    description: "Setup antidote (zsh plugin manager)"
+    command: |
+      git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
+    reboot-required: false
 
   - name: "Tmuxinator"
     description: "Setup tmuxinator"
@@ -38,7 +45,7 @@ tasks:
   - name: "IntelliJ"
     description: "Setup JetBrains IntelliJ Community Edition"
     steps:
-      1: Download IntelliJ IDEA
+      1. Download via: https://www.jetbrains.com/idea/download/?section=linux
       2: Extract it
       3: Move it to /opt folder
       4: Run commands below
@@ -48,12 +55,21 @@ tasks:
       sudo mv /opt/idea-* /opt/idea
       cd /opt/idea/bin &&
       ./idea.sh
+    reboot-required: true
 
   - name: "Config"
     description: "Setup config files"
     command: |
       cd $HOME/dotfiles &&
-      stow fedora
+      stow fedora common &&
+      git config --global user.name thienaang.dev &&
+      git config --global user.email thienaang.dev@gmail.com
+    reboot-required: true
+
+  - name: "SSH"
+    description: "Setup remote login"
+    command: ssh-keygen -t ed25519 -C "thienaang.dev@gmail.com"
+    reboot-required: true
 
   - name: "Docker Desktop"
     description: "Setup Docker Desktop"
@@ -69,16 +85,6 @@ tasks:
               gpg --generate-key
           - init-pass: |
               pass init
-    reboot-required: false
-
-  - name: "Oh-My-Zsh"
-    description: "Setup oh-my-zsh"
-    command: |
-      sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc &&
-      git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions &&
-      git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete &&
-      git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode &&
-      git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
     reboot-required: false
 
   - name: "Brave"

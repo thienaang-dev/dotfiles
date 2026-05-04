@@ -1,0 +1,68 @@
+metadata:
+  os: "macOS"
+  chip: "M4"
+
+tasks:
+  - name: "Homebrew"
+    description: "Install homebrew - package manager for macOS"
+    command: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    reboot-required: false
+
+  - name: "Packages"
+    description: "Setup all necessary packages for development"
+    command: |
+      brew install git gh stow tmux alacritty node openjdk neovim gcc make ripgrep fd unzip tmuxinator &&
+      brew install --cask alacritty
+    reboot-required: true
+
+  - name: "Zsh"
+    description: "Setup zsh shell"
+    command: |
+      brew install zsh &&
+      chsh -s /opt/homebrew/bin/zsh &&
+      rm -rf $HOME/.zshrc
+    reboot-required: true
+
+  - name: "starship"
+    description: "Setup starship (prompt)"
+    command: |
+      curl -sS https://starship.rs/install.sh | sh
+    reboot-required: false
+
+  - name: "antidote"
+    description: "Setup antidote (zsh plugin manager)"
+    command: |
+      git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
+    reboot-required: false
+
+  - name: "Config"
+    description: "Setup config files"
+    command: |
+      cd $HOME/dotfiles &&
+      stow macos common &&
+      git config --global user.name thienaang.dev &&
+      git config --global user.email thienaang.dev@gmail.com
+    reboot-required: true
+
+  - name: "SSH"
+    description: "Setup remote login"
+    command: ssh-keygen -t ed25519 -C "thienaang.dev@gmail.com"
+    reboot-required: true
+
+  - name: "Docker Desktop"
+    description: "Setup Docker Desktop"
+    steps:
+      1. Download via: https://docs.docker.com/desktop/setup/install/mac-install/
+    reboot-required: true
+
+  - name: "IntelliJ"
+    description: "Setup JetBrains IntelliJ Community Edition"
+    steps:
+      1. Download via: https://www.jetbrains.com/idea/download/?section=linux
+    reboot-required: true
+
+  - name: "BetterDisplay"
+    description: "Setup BetterDisplay"
+    steps:
+      1. Download via: https://betterdisplaymac.com/
+    reboot-required: false

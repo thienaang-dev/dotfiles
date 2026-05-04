@@ -1,0 +1,17 @@
+theme = light: light.ghostty, dark: dark.ghostty
+
+font-family = JetBrains Mono
+font-style = Medium
+font-feature = -calt, -liga, -dlig
+font-variation-bold = wght=900
+font-size = 13
+font-thicken = true
+adjust-cell-height = 20%
+
+title = " "
+window-padding-y = 0
+window-padding-balance = true
+
+mouse-hide-while-typing = true
+
+shell-integration = zsh

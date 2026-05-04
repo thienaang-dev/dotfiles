@@ -1,10 +1,10 @@
-# Source antidote
+# Antidote
 source $HOME/.antidote/antidote.zsh
 antidote load
 
 # Smarter completion initialization
 autoload -Uz compinit
-compinit -C
+compinit
 
 # Starts starship
 eval "$(starship init zsh)"
@@ -23,9 +23,8 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
 # Exports
-export EDITOR="nvim"
-export VISUAL="nvim"
-export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
+export EDITOR=VISUAL="nvim"
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Aliases
 alias glor="git log --oneline --reverse"
@@ -42,9 +41,17 @@ alias trl="tmux source $HOME/.config/tmux/tmux.conf"
 alias mux="tmuxinator"
 alias muxst="tmuxinator start server && tmuxinator start code && tmuxinator start git"
 
+# Deletes all local branch except branch in parameter
 gbdae() {
   if [ -n "$1" ]
   then
     gb | grep -v "$1" | xargs git branch -D
   fi
 }
+
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
