@@ -60,3 +60,9 @@ tasks:
     steps:
       1. Download via: https://www.jetbrains.com/idea/download/?section=linux
     reboot-required: true
+
+  - name: "BetterDisplay"
+    description: "Setup BetterDisplay"
+    steps:
+      1. Download via: https://betterdisplaymac.com/
+    reboot-required: false

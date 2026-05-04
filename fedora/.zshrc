@@ -38,6 +38,7 @@ alias ta="tmux attach -t"
 alias ts="tmux new-session -s"
 alias tks="tmux kill-server"
 alias tkw="tmux kill-window -t"
+alias trl="tmux source $HOME/.config/tmux/tmux.conf"
 alias mux="tmuxinator"
 alias muxst="tmuxinator start server && tmuxinator start code && tmuxinator start git"
 
