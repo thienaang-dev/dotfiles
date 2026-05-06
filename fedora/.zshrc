@@ -1,15 +1,19 @@
-# Source antidote
+# Smarter completion initialization
+autoload -Uz compinit
+if [[ ! -f ~/.zcompdump || ~/.zcompdump -nt $ZDOTDIR/.zshrc ]]; then
+  compinit
+else
+  compinit -C
+fi
+
+# Antidote
 source $HOME/.antidote/antidote.zsh
 antidote load
 
-# Smarter completion initialization
-autoload -Uz compinit
-compinit -C
-
-# Starts starship
+# starship
 eval "$(starship init zsh)"
 
-# User specific environment
+# path
 typeset -U path PATH
 path=("$HOME/.local/bin" "$HOME/bin" "/opt/gradle/bin" $path)
 export PATH
@@ -42,6 +46,7 @@ alias trl="tmux source $HOME/.config/tmux/tmux.conf"
 alias mux="tmuxinator"
 alias muxst="tmuxinator start server && tmuxinator start code && tmuxinator start git"
 
+# Deletes all local branch except branch in parameter
 gbdae() {
   if [ -n "$1" ]
   then

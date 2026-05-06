@@ -1,17 +1,21 @@
+# Smarter completion initialization
+autoload -Uz compinit
+if [[ ! -f ~/.zcompdump || ~/.zcompdump -nt $ZDOTDIR/.zshrc ]]; then
+  compinit
+else
+  compinit -C
+fi
+
 # Antidote
 source $HOME/.antidote/antidote.zsh
 antidote load
 
-# Smarter completion initialization
-autoload -Uz compinit
-compinit
-
-# Starts starship
+# starship
 eval "$(starship init zsh)"
 
-# User specific environment
+# path
 typeset -U path PATH
-path=("$HOME/.local/bin" "$HOME/bin" "/opt/gradle/bin" $path)
+path=("$HOME/.local/bin" "$HOME/bin" "/opt/gradle/bin" "$BUN_INSTALL/bin" $path)
 export PATH
 
 # Settings
@@ -23,8 +27,10 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
 # Exports
-export EDITOR=VISUAL="nvim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 export JAVA_HOME=$(/usr/libexec/java_home)
+export BUN_INSTALL="$HOME/.bun"
 
 # Aliases
 alias glor="git log --oneline --reverse"
@@ -51,7 +57,3 @@ gbdae() {
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
