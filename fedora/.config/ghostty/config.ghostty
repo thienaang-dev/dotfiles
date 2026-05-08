@@ -11,7 +11,7 @@ adjust-cell-height = 20%
 title = " "
 window-padding-balance = true
 window-decoration = none
-
 mouse-hide-while-typing = true
+confirm-close-surface = false
 
 shell-integration = zsh
