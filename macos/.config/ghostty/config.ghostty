@@ -1,8 +1,8 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
-font-family = JetBrains Mono
+font-family = Monaspace Argon
 font-style = SemiBold
-font-feature = -calt, -liga, -dlig
+font-feature = -liga, -dlig
 font-variation-bold = wght=900
 font-size = 13
 font-thicken = true
