@@ -4,9 +4,8 @@ font-family = Monaspace Argon
 font-style = Bold
 font-feature = -liga, -dlig
 font-variation-bold = wght=900
-font-size = 13
+font-size = 14
 font-thicken = true
-adjust-cell-height = 20%
 
 title = " "
 window-padding-balance = true
