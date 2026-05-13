@@ -1,6 +1,6 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
-font-family = Maple Mono Normal
+font-family = Maple Mono
 font-style = SemiBold
 font-feature = -calt, -liga, -dlig
 font-variation-bold = wght=900
