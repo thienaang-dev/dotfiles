@@ -1,13 +1,13 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
 font-family = Maple Mono
-font-style = Bold
-font-feature = -calt, -liga, -dlig
+font-style = SemiBold
+font-feature = -calt, -liga, -dlig, cv01
 font-variation-bold = wght=900
-font-size = 13
+font-size = 14
 font-thicken = true
 adjust-cell-width = 5%
-adjust-cell-height = 20%
+adjust-cell-height = 10%
 
 title = " "
 window-padding-balance = true
