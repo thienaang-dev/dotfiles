@@ -17,7 +17,7 @@ Multiplexer: [tmux](https://github.com/tmux/tmux/wiki)
 
 Editor: [NeoVim](https://github.com/neovim/neovim)
 
-Font: [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
+Font: [Maple Mono](https://font.subf.dev/en/)
 
 Color Scheme: [Everforest](https://github.com/sainnhe/everforest)
 
