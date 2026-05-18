@@ -32,6 +32,7 @@ export VISUAL="nvim"
 export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
 
 # Aliases
+alias rl="exec zsh"
 alias glor="git log --oneline --reverse"
 alias c="clear"
 alias vi="nvim"

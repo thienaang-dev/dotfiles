@@ -33,6 +33,7 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export BUN_INSTALL="$HOME/.bun"
 
 # Aliases
+alias rl="exec zsh"
 alias glor="git log --oneline --reverse"
 alias c="clear"
 alias vi="nvim"
