@@ -6,7 +6,6 @@ font-feature = -calt, -liga, -dlig, ss02
 font-variation-bold = wght=900
 font-size = 14
 font-thicken = true
-adjust-cell-height = 20%
 
 title = " "
 window-padding-y = 0
