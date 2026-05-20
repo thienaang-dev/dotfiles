@@ -1,11 +1,12 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
-font-family = JetBrains Mono
+font-family = Recursive Mono Casual Static
 font-style = Medium
-font-feature = -calt, -liga, -dlig, ss02
+font-feature = -calt, -liga, -dlig, ss01, ss02, ss03, ss04, ss05, ss06, ss07, ss08, ss09, ss10, ss11, ss12
 font-variation-bold = wght=900
 font-size = 14
 font-thicken = true
+adjust-cell-height = 10%
 
 title = " "
 window-padding-y = 0
