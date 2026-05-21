@@ -3,6 +3,4 @@ root: ~/Repositories/
 
 windows:
   - front-end:
-      root: ~/Repositories/
-  - back-end:
-      root: ~/Repositories/
+      root: ~/Repositories/journey_aware_storefront/reseller/
