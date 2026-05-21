@@ -4,9 +4,9 @@ font-family = Maple Mono
 font-style = Medium
 font-feature = -calt, -liga, -dlig, cv01
 font-variation-bold = wght=900
-font-size = 13.5
+font-size = 13
 font-thicken = true
-adjust-cell-height = 15%
+adjust-cell-height = 20%
 
 title = " "
 window-padding-y = 0
