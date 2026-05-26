@@ -1,9 +1,9 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
-font-family = Maple Mono
-font-style = SemiBold
-font-feature = -calt, -liga, -dlig, cv01
-font-variation-bold = wght=900
+font-family = CommitMono
+font-style = 550Regular
+font-feature = -calt, -liga, -dlig
+font-style-bold = 700Regular
 font-size = 13
 font-thicken = true
 adjust-cell-height = 20%
