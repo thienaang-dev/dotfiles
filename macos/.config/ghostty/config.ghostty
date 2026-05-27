@@ -1,12 +1,10 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
-font-family = JetBrains Mono
+font-family = IBM Plex Mono
 font-style = Medium
-font-feature = -calt, -liga, -dlig
-font-variation-bold = wght=800
-font-size = 14
+font-size = 15
 font-thicken = true
-adjust-cell-height = 20%
+adjust-cell-height = 15%
 
 title = " "
 window-padding-y = 0
