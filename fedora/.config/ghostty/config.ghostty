@@ -1,10 +1,11 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
-font-family = Maple Mono
+font-family = Input Mono
 font-style = SemiBold
-font-feature = ss01, ss02, cv01, cv03
 font-size = 12
+font-variation-bold = wght=900
 font-thicken = true
+adjust-cell-height = 5%
 
 title = " "
 window-padding-balance = true
