@@ -1,7 +1,7 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
 font-family = Input Mono
-font-style = Bold
+font-style = Medium
 font-size = 12
 font-variation-bold = wght=900
 adjust-cell-height = 10%
