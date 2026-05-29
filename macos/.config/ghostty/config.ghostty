@@ -1,13 +1,14 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
-font-family = Input Mono
+font-family = Maple Mono
 font-style = Medium
-font-style-bold = Black
+font-style-bold = ExtraBold
 font-style-italic = Medium Italic
-font-style-bold-italic = Black Italic
+font-style-bold-italic = ExtraBold Italic
+font-feature = ss01, ss02, cv01, cv03
 font-size = 15
+adjust-cell-height = 20%
 font-thicken = true
-adjust-cell-height = 35%
 
 title = " "
 window-padding-y = 0
