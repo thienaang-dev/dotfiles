@@ -1,9 +1,9 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
 font-family = Maple Mono
-font-style = Medium
+font-style = SemiBold
 font-style-bold = ExtraBold
-font-style-italic = Medium Italic
+font-style-italic = SemiBold Italic
 font-style-bold-italic = ExtraBold Italic
 font-feature = ss01, ss02, cv01, cv03
 font-size = 15
