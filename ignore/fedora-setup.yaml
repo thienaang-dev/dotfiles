@@ -5,14 +5,21 @@ metadata:
 tasks:
   - name: "System"
     description: "Ensure system is up to date"
-    command: "sudo dnf upgrade"
+    command: sudo dnf upgrade
     reboot-required: false
 
   - name: "Packages"
     description: "Setup all necessary packages for development"
     command: |
-      sudo dnf -y install gh stow tmux alacritty nodejs java-25-openjdk npm neovim gcc make git ripgrep fd-find unzip &&
+      sudo dnf -y install gh stow tmux nodejs java-25-openjdk npm neovim gcc make git ripgrep fd-find unzip &&
       sudo flatpak install -y postman spotify
+    reboot-required: false
+
+  - name: "Ghostty"
+    description: "Setup Ghostty - terminal emulator"
+    command: |
+      sudo dnf copr enable scottames/ghostty &&
+      sudo dnf install ghostty
     reboot-required: false
 
   - name: "Zsh"
@@ -25,14 +32,12 @@ tasks:
 
   - name: "starship"
     description: "Setup starship (prompt)"
-    command: |
-      curl -sS https://starship.rs/install.sh | sh
+    command: curl -sS https://starship.rs/install.sh | sh
     reboot-required: false
 
   - name: "antidote"
     description: "Setup antidote (zsh plugin manager)"
-    command: |
-      git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
+    command: git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
     reboot-required: false
 
   - name: "Tmuxinator"
@@ -89,6 +94,5 @@ tasks:
 
   - name: "Brave"
     description: "Setup Brave browser"
-    command: |
-      curl -fsS https://dl.brave.com/install.sh | sh
+    command: curl -fsS https://dl.brave.com/install.sh | sh
     reboot-required: false
