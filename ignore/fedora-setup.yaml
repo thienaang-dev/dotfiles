@@ -96,3 +96,11 @@ tasks:
     description: "Setup Brave browser"
     command: curl -fsS https://dl.brave.com/install.sh | sh
     reboot-required: false
+
+  - name: "SDKMAN"
+    description: "Setup SDKMAN - Version management"
+    command: |
+        curl -s "https://get.sdkman.io" | bash &&
+        source "$HOME/.sdkman/bin/sdkman-init.sh" &&
+        sdk install kotlin
+    reboot-required: false

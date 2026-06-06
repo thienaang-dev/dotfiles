@@ -54,3 +54,7 @@ gbdae() {
     gb | grep -v "$1" | xargs git branch -D
   fi
 }
+
+# SDKMAN - must be at end of file to work
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
