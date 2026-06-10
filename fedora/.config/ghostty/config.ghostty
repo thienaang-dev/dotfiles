@@ -5,8 +5,9 @@ font-style = Bold
 font-style-bold = Black
 font-style-italic = Bold Italic
 font-style-bold-italic = Black Italic
-font-feature = ss01, ss02, cv01, cv03
+font-feature = ss02, ss03, ss07, zero
 font-size = 12
+adjust-cell-height = 5%
 
 title = " "
 window-padding-balance = true
