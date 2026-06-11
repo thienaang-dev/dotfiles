@@ -1,14 +1,12 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
-font-family = Source Code Pro
-font-style = SemiBold
-font-style-bold = Black
-font-style-italic = SemiBold Italic
-font-style-bold-italic = Black Italic
-font-feature = ss02, ss03, ss07, zero
+font-family = Maple Mono
+font-style = Regular
+font-style-bold = Bold
+font-style-italic = Medium Italic
+font-style-bold-italic = Bold Italic
+font-feature = ss01, ss02, cv01, cv03
 font-size = 15
-adjust-cell-height = 30%
-font-thicken = true
 
 title = " "
 window-padding-y = 0
