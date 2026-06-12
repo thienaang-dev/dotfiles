@@ -1,13 +1,14 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
-font-family = Victor Mono
-font-style = Medium
+font-family = JetBrains Mono
+font-style = Regular
 font-style-bold = Bold
-font-style-italic = Medium Italic
+font-style-italic = Regular Italic
 font-style-bold-italic = Bold Italic
-font-feature = ss01, ss02
-font-size = 15
+font-feature = -calt, -liga, -dlig
+font-size = 13
 adjust-cell-height = 20%
+font-thicken = true
 
 title = " "
 window-padding-y = 0
