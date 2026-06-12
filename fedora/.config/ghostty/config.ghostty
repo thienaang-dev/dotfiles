@@ -1,14 +1,16 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
 font-family = JetBrains Mono
-font-style = Medium 
+font-style = Medium
 font-style-bold = ExtraBold
 font-style-italic = Medium Italic
 font-style-bold-italic = ExtraBold Italic
 font-feature = -calt, -liga, -dlig
-font-size = 10.5
+font-size = 10
+adjust-cell-height = 20%
 
 title = " "
+window-padding-y = 0
 window-padding-balance = true
 window-decoration = none
 mouse-hide-while-typing = true
