@@ -1,13 +1,13 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
-font-family = Maple Mono
+font-family = Geist Mono
 font-style = Regular
-font-style-bold = Bold
+font-style-bold = SemiBold
 font-style-italic = Italic
-font-style-bold-italic = Bold Italic
-font-feature = ss01, ss02, cv01, cv03
-font-size = 13
-adjust-cell-height = 20%
+font-style-bold-italic = SemiBold Italic
+font-feature = ss02, ss03
+font-size = 14
+adjust-cell-height = 25%
 font-thicken = true
 
 title = " "
