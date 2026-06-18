@@ -1,14 +1,15 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
-font-family = JetBrains Mono
-font-style = Regular
-font-style-bold = SemiBold
-font-style-italic = Italic
-font-style-bold-italic = SemiBold Italic
-font-feature = ss02, ss19, zero
+font-family = CommitMonoV143
+font-style = 400 Regular
+font-style-bold = 700 Regular
+font-style-italic = 400 Italic
+font-style-bold-italic = 700 Italic
+font-feature = ss02, ss05, cv01, cv02
 font-size = 14
 adjust-cell-height = 25%
 font-thicken = true
+font-thicken-strength = 0
 
 title = " "
 window-padding-y = 0

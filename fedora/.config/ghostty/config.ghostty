@@ -1,11 +1,11 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
-font-family = JetBrains Mono
-font-style = Regular
-font-style-bold = Bold
-font-style-italic = Italic
-font-style-bold-italic = Bold Italic
-font-feature = ss02, ss19, zero
+font-family = CommitMonoV143
+font-style = 550 Regular
+font-style-bold = 700 Regular
+font-style-italic = 550 Italic
+font-style-bold-italic = 700 Italic
+font-feature = ss02, ss05, cv01, cv02
 font-size = 11
 adjust-cell-height = 25%
 
