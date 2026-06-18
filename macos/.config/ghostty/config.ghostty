@@ -1,15 +1,13 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
-font-family = CommitMonoV143
-font-style = 400 Regular
-font-style-bold = 700 Regular
-font-style-italic = 400 Italic
-font-style-bold-italic = 700 Italic
-font-feature = ss02, ss05, cv01, cv02
+font-family = Monaspace Neon
+font-style = Regular
+font-style-bold = Bold
+font-style-italic = Italic
+font-style-bold-italic = Bold Italic
+font-feature = ss02, ss03, ss04, ss05, ss06, ss07, ss10
 font-size = 14
-adjust-cell-height = 25%
-font-thicken = true
-font-thicken-strength = 0
+adjust-cell-height = 20%
 
 title = " "
 window-padding-y = 0
