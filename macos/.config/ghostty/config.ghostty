@@ -1,13 +1,13 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
 font-family = Monaspace Neon
-font-style = Regular
-font-style-bold = Bold
-font-style-italic = Italic
-font-style-bold-italic = Bold Italic
+font-style = Medium
+font-style-bold = ExtraBold
+font-style-italic = Medium Italic
+font-style-bold-italic = ExtraBold Italic
 font-feature = ss03, ss04, ss05, ss06, ss07, ss10
 font-size = 14
-adjust-cell-height = 20%
+adjust-cell-height = 30%
 
 title = " "
 window-padding-y = 0
