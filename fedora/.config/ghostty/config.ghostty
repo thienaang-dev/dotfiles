@@ -1,11 +1,11 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
-font-family = Maple Mono
-font-style = Regular
+font-family = JetBrains Mono
+font-style = Medium
 font-style-bold = Bold
-font-style-italic = Italic
+font-style-italic = Medium Italic
 font-style-bold-italic = Bold Italic
-font-feature = ss01, ss02, cv01, cv03
+font-feature = zero, -calt, -liga, -dlig
 font-size = 11
 adjust-cell-height = 25%
 
