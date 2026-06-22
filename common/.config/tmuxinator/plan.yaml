@@ -1,0 +1,9 @@
+name: plan
+root: ~/repositories/
+
+windows:
+  - front-end:
+      root: ~/repositories/
+  - back-end:
+      root: ~/repositories/
+
