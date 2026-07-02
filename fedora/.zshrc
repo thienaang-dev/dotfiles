@@ -45,7 +45,7 @@ alias tks="tmux kill-server"
 alias tkw="tmux kill-window -t"
 alias trl="tmux source $HOME/.config/tmux/tmux.conf"
 alias mux="tmuxinator"
-alias muxst="tmuxinator start server && tmuxinator start code && tmuxinator start git && tmuxinator start plan"
+alias muxst="tmuxinator start server && tmuxinator start code && tmuxinator start git && tmuxinator start misc"
 
 # Deletes all local branch except branch in parameter
 gbdae() {
