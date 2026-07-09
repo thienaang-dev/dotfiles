@@ -1,23 +1,42 @@
 return {
   {
-    "sainnhe/everforest",
+    "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
-    config = function()
-      vim.g.everforest_background = "soft"
-      vim.g.everforest_transparent_background = 2
-      vim.g.everforest_enable_bold = 1
-      vim.g.everforest_enable_italic = 1
-      vim.g.everforest_diagnostic_text_highlight = 1
-      vim.g.everforest_diagnostic_line_highlight = 1
-      vim.g.everforest_diagnostic_virtual_text = "colored"
-
-      vim.cmd.colorscheme("everforest")
+    --- @type KanagawaConfig
+    opts = {
+      transparent = true,
+      colors = {
+        theme = {
+          all = {
+            ui = {
+              bg_gutter = "none",
+            },
+          },
+        },
+      },
+      overrides = function(colors)
+        local theme = colors.theme
+        return {
+          StatusLine = { bg = "none" },
+          StatusLineNC = { bg = "none" },
+          NormalFloat = { bg = "none" },
+          FloatBorder = { bg = "none" },
+          FloatTitle = { bg = "none" },
+          NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
+          LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+          MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+        }
+      end,
+    },
+    config = function(_, opts)
+      require("kanagawa").setup(opts)
+      vim.cmd.colorscheme("kanagawa")
     end,
   },
   {
     "LazyVim/LazyVim",
-    opts = { colorscheme = "everforest" },
+    opts = { colorscheme = "kanagawa" },
   },
 
   -- Disable plugins

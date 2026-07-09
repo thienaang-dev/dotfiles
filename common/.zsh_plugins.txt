@@ -6,4 +6,3 @@ zsh-users/zsh-autosuggestions
 jeffreytse/zsh-vi-mode
 marlonrichert/zsh-autocomplete
 zsh-users/zsh-syntax-highlighting
-
