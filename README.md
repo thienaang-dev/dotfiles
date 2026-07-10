@@ -11,15 +11,15 @@
 
 OS: [Fedora](https://fedoraproject.org/start) and [MacOS](https://www.apple.com/os/macos/)
 
-Terminal Emulator: [Alacritty](https://alacritty.org/)
+Terminal Emulator: [Ghostty](https://ghostty.org/)
 
 Multiplexer: [tmux](https://github.com/tmux/tmux/wiki)
 
 Editor: [NeoVim](https://github.com/neovim/neovim)
 
-Font: [JetBrains Mono Nerd](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip)
+Font: [Maple Mono](https://font.subf.dev/en/)
 
-Color Scheme: [Gruvbox Material](https://github.com/EdenEast/nightfox.nvim)
+Color Scheme: [Everforest](https://github.com/sainnhe/everforest)
 
 Icon: Adwaita
 

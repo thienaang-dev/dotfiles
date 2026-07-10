@@ -1,4 +1,4 @@
-name: code
+name: misc
 root: ~/repositories/
 
 windows:
@@ -6,3 +6,4 @@ windows:
       root: ~/repositories/
   - back-end:
       root: ~/repositories/
+

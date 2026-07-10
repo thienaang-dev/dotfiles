@@ -1,17 +1,20 @@
 theme = light: light.ghostty, dark: dark.ghostty
 
-font-family = JetBrains Mono
+font-family = Maple Mono
 font-style = Medium
-font-feature = -calt, -liga, -dlig
-font-variation-bold = wght=900
+font-style-bold = Bold
+font-style-italic = Medium Italic
+font-style-bold-italic = Bold Italic
+font-feature = ss01, ss02, cv01, cv03
 font-size = 13
-font-thicken = true
-adjust-cell-height = 20%
+adjust-cell-height = 15%
 
 title = " "
+window-padding-y = 0
 window-padding-balance = true
 window-decoration = none
-
 mouse-hide-while-typing = true
+confirm-close-surface = false
 
 shell-integration = zsh
+term = xterm-256color

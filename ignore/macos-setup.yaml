@@ -1,6 +1,5 @@
 metadata:
   os: "macOS"
-  chip: "M4"
 
 tasks:
   - name: "Homebrew"
@@ -11,8 +10,8 @@ tasks:
   - name: "Packages"
     description: "Setup all necessary packages for development"
     command: |
-      brew install git gh stow tmux alacritty node openjdk neovim gcc make ripgrep fd unzip tmuxinator &&
-      brew install --cask alacritty
+      brew install git gh stow tmux node openjdk neovim gcc make ripgrep fd unzip tmuxinator &&
+      brew install --cask ghostty
     reboot-required: true
 
   - name: "Zsh"
@@ -25,14 +24,12 @@ tasks:
 
   - name: "starship"
     description: "Setup starship (prompt)"
-    command: |
-      curl -sS https://starship.rs/install.sh | sh
+    command:  -sS https://starship.rs/install.sh | sh
     reboot-required: false
 
   - name: "antidote"
     description: "Setup antidote (zsh plugin manager)"
-    command: |
-      git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
+    command: git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
     reboot-required: false
 
   - name: "Config"

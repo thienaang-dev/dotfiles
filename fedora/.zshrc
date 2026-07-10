@@ -1,15 +1,19 @@
-# Source antidote
+# Smarter completion initialization
+autoload -Uz compinit
+if [[ ! -f ~/.zcompdump || ~/.zcompdump -nt $ZDOTDIR/.zshrc ]]; then
+  compinit
+else
+  compinit -C
+fi
+
+# Antidote
 source $HOME/.antidote/antidote.zsh
 antidote load
 
-# Smarter completion initialization
-autoload -Uz compinit
-compinit -C
-
-# Starts starship
+# starship
 eval "$(starship init zsh)"
 
-# User specific environment
+# path
 typeset -U path PATH
 path=("$HOME/.local/bin" "$HOME/bin" "/opt/gradle/bin" $path)
 export PATH
@@ -28,6 +32,7 @@ export VISUAL="nvim"
 export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
 
 # Aliases
+alias rl="exec zsh"
 alias glor="git log --oneline --reverse"
 alias c="clear"
 alias vi="nvim"
@@ -40,11 +45,16 @@ alias tks="tmux kill-server"
 alias tkw="tmux kill-window -t"
 alias trl="tmux source $HOME/.config/tmux/tmux.conf"
 alias mux="tmuxinator"
-alias muxst="tmuxinator start server && tmuxinator start code && tmuxinator start git"
+alias muxst="tmuxinator start server && tmuxinator start code && tmuxinator start git && tmuxinator start misc"
 
+# Deletes all local branch except branch in parameter
 gbdae() {
   if [ -n "$1" ]
   then
     gb | grep -v "$1" | xargs git branch -D
   fi
 }
+
+# SDKMAN - must be at end of file to work
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
