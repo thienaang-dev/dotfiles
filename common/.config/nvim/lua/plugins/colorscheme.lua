@@ -38,14 +38,4 @@ return {
     "LazyVim/LazyVim",
     opts = { colorscheme = "kanagawa" },
   },
-
-  -- Disable plugins
-  {
-    "catppuccin/nvim",
-    enabled = false,
-  },
-  {
-    "folke/tokyonight.nvim",
-    enabled = false,
-  },
 }

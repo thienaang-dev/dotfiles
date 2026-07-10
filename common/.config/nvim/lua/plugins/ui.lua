@@ -1,8 +1,8 @@
 return {
   {
     "folke/snacks.nvim",
-    --- @module 'snacks.nvim'
-    --- @type snacks.config
+    --- @module "snacks"
+    --- @type snacks.Config
     opts = {
       dashboard = {
         preset = {
