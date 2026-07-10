@@ -1,0 +1,5 @@
+require("plugins.coding")
+require("plugins.colorscheme")
+require("plugins.editor")
+require("plugins.lsp")
+require("plugins.treesitter")

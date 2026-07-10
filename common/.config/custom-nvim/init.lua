@@ -1,0 +1,6 @@
+require("globals")
+require("autocommands")
+require("keymaps")
+require("options")
+require("pack")
+require("plugins")
