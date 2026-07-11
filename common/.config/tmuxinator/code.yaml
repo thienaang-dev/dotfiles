@@ -1,8 +1,8 @@
 name: code
-root: ~/repositories/
+root: ~/repositories/projects/
 
 windows:
   - front-end:
-      root: ~/repositories/
+      root: ~/repositories/projects/
   - back-end:
-      root: ~/repositories/
+      root: ~/repositories/projects/
