@@ -1,6 +1,0 @@
-require("plugins.coding.autopairs")
-require("plugins.coding.blink-cmp")
-require("plugins.coding.conform")
-require("plugins.coding.flash")
-require("plugins.coding.guess-indent")
-require("plugins.coding.mini")

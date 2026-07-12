@@ -1,8 +1,0 @@
-require("plugins.editor.bufferline")
-require("plugins.editor.git-signs")
-require("plugins.editor.indent-blankline")
-require("plugins.editor.neo-tree")
-require("plugins.editor.telescope")
-require("plugins.editor.todo-comments")
-require("plugins.editor.trouble")
-require("plugins.editor.which-key")
