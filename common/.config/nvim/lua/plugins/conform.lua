@@ -1,6 +1,6 @@
 return {
   "stevearc/conform.nvim",
-  event = "BufWritePre",
+  event = { "BufWritePre", "BufNewFile" },
   cmd = "ConformInfo",
   keys = {
     {
@@ -26,6 +26,7 @@ return {
     formatters_by_ft = {
       lua = { "stylua", stop_after_first = true },
       markdown = { "markdownlint", stop_after_first = true },
+      c = { "clang_format", stop_after_first = true },
       ["*"] = { "prettier" },
     },
   },

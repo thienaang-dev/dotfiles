@@ -2,6 +2,7 @@ return {
   "saghen/blink.cmp",
   event = { "InsertEnter", "CmdlineEnter" },
   version = "1.*",
+  priority = 1000,
   dependencies = {
     {
       "L3MON4D3/LuaSnip",
@@ -37,7 +38,12 @@ return {
     },
     appearance = { nerd_font_variant = "mono" },
     completion = { documentation = { auto_show = true } },
-    sources = { default = { "lsp", "path", "snippets" } },
+    sources = {
+      default = { "lsp", "path", "snippets", "codeium" },
+      providers = {
+        codeium = { name = "Codeium", module = "codeium.blink", async = true },
+      },
+    },
     snippets = { preset = "luasnip" },
     fuzzy = { implementation = "lua" },
     signature = { enabled = true },

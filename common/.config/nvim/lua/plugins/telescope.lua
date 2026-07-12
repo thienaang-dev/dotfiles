@@ -11,12 +11,25 @@ return {
     },
     "nvim-telescope/telescope-ui-select.nvim",
   },
-  config = function()
-    require("telescope").setup({
-      extensions = {
-        ["ui-select"] = { require("telescope.themes").get_dropdown() },
+  ---@module "telescope"
+  ---@type Telescope.Config
+  opts = {
+    defaults = {
+      vimgrep_arguments = {
+        "rg",
+        "--color=never",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--column",
+        "--hidden",
+        "--glob=!**/.git/*",
       },
-    })
+    },
+    pickers = { find_files = { hidden = true, no_ignore = true } },
+  },
+  config = function(_, opts)
+    require("telescope").setup(opts)
 
     -- Enable Telescope extensions if they are installed
     pcall(require("telescope").load_extension, "fzf")

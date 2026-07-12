@@ -5,6 +5,7 @@ return {
     local lint = require("lint")
     lint.linters_by_ft = {
       lua = { "luacheck" },
+      c = { "cpplint" },
       markdown = { "markdownlint" },
       docker = { "hadolint" },
       javascript = { "eslint_d" },

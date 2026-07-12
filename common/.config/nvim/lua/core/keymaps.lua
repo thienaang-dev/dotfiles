@@ -12,9 +12,6 @@ keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
 -- Open lazy with <leader>-l
 keymap.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Lazy" })
 
--- Open explorer with <leader>-e
-keymap.set("n", "<leader>e", "<cmd>Ex<CR>", { desc = "Explorer" })
-
 -- Open mason with <leader>-m
 keymap.set("n", "<leader>m", "<cmd>Mason<CR>", { desc = "Mason" })
 
