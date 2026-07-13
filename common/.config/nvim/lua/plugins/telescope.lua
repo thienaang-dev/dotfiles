@@ -11,25 +11,30 @@ return {
     },
     "nvim-telescope/telescope-ui-select.nvim",
   },
-  ---@module "telescope"
-  ---@type Telescope.Config
-  opts = {
-    defaults = {
-      vimgrep_arguments = {
-        "rg",
-        "--color=never",
-        "--no-heading",
-        "--with-filename",
-        "--line-number",
-        "--column",
-        "--hidden",
-        "--glob=!**/.git/*",
+  config = function()
+    local telescope = require("telescope")
+    local telescopeConfig = require("telescope.config")
+
+    -- Clone the default Telescope configuration
+    local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
+
+    -- I want to search in hidden/dot files.
+    table.insert(vimgrep_arguments, "--hidden")
+    -- I don't want to search in the `.git` directory.
+    table.insert(vimgrep_arguments, "--glob")
+    table.insert(vimgrep_arguments, "!**/.git/*")
+    table.insert(vimgrep_arguments, "!**/.next/*")
+    table.insert(vimgrep_arguments, "!**/build/*")
+
+    telescope.setup({
+      defaults = { vimgrep_arguments = vimgrep_arguments },
+      pickers = {
+        find_files = {
+          -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+          find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+        },
       },
-    },
-    pickers = { find_files = { hidden = true, no_ignore = true } },
-  },
-  config = function(_, opts)
-    require("telescope").setup(opts)
+    })
 
     -- Enable Telescope extensions if they are installed
     pcall(require("telescope").load_extension, "fzf")
@@ -147,9 +152,9 @@ return {
     -- Shortcut for searching your Neovim configuration files
     vim.keymap.set(
       "n",
-      "<leader>sn",
+      "<leader>sC",
       function() builtin.find_files({ cwd = vim.fn.stdpath("config") }) end,
-      { desc = "[S]earch [N]eovim files" }
+      { desc = "[S]earch [C]onfiguration" }
     )
   end,
 }

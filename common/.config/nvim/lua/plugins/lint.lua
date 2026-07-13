@@ -10,6 +10,8 @@ return {
       docker = { "hadolint" },
       javascript = { "eslint_d" },
       typescript = { "eslint_d" },
+      yaml = { "yamllint" },
+      json = { "jsonlint" },
     }
 
     -- Create autocommand which carries out the actual linting

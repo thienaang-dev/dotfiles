@@ -43,6 +43,9 @@ return {
       providers = {
         codeium = { name = "Codeium", module = "codeium.blink", async = true },
       },
+      per_filetype = {
+        oil = { default = { "path" } },
+      },
     },
     snippets = { preset = "luasnip" },
     fuzzy = { implementation = "lua" },

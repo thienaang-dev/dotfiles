@@ -6,7 +6,7 @@ return {
     {
       "<leader>cf",
       function() require("conform").format({ async = true }) end,
-      mode = "",
+      mode = "n",
       desc = "Code Format",
     },
   },
@@ -27,6 +27,7 @@ return {
       lua = { "stylua", stop_after_first = true },
       markdown = { "markdownlint", stop_after_first = true },
       c = { "clang_format", stop_after_first = true },
+      yaml = { "yamlfmt", stop_after_first = true },
       ["*"] = { "prettier" },
     },
   },
