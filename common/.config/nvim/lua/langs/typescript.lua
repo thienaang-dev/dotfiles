@@ -1,6 +1,6 @@
 return {
   vtsls = {},
   tailwindcss = {},
-  eslint_d = {},
+  eslint = {},
   prettier = {},
 }

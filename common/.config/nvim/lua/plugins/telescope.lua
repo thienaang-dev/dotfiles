@@ -20,11 +20,15 @@ return {
 
     -- I want to search in hidden/dot files.
     table.insert(vimgrep_arguments, "--hidden")
-    -- I don't want to search in the `.git` directory.
-    table.insert(vimgrep_arguments, "--glob")
-    table.insert(vimgrep_arguments, "!**/.git/*")
-    table.insert(vimgrep_arguments, "!**/.next/*")
-    table.insert(vimgrep_arguments, "!**/build/*")
+    -- I don't want to search in these directories.
+    for _, glob in ipairs({
+      "!**/.git/*",
+      "!**/.next/*",
+      "!**/build/*",
+    }) do
+      table.insert(vimgrep_arguments, "--glob")
+      table.insert(vimgrep_arguments, glob)
+    end
 
     telescope.setup({
       defaults = { vimgrep_arguments = vimgrep_arguments },

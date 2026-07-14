@@ -8,8 +8,10 @@ return {
       c = { "cpplint" },
       markdown = { "markdownlint" },
       docker = { "hadolint" },
-      javascript = { "eslint_d" },
-      typescript = { "eslint_d" },
+      javascript = {},
+      typescript = {},
+      javascriptreact = {},
+      typescriptreact = {},
       yaml = { "yamllint" },
       json = { "jsonlint" },
     }
