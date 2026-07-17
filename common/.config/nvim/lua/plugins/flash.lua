@@ -37,5 +37,14 @@ return {
       end,
       desc = "Treesitter Incremental Selection",
     },
+    {
+      "<esc>",
+      mode = { "n" },
+      function()
+        vim.cmd("nohlsearch")
+        return "<esc>"
+      end,
+      desc = "Clear highlight",
+    },
   },
 }

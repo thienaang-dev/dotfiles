@@ -3,9 +3,6 @@ local keymap = vim.keymap
 -- Save with <ctrl-s>
 keymap.set("n", "<c-s>", "<cmd>w<CR>", { desc = "Save" })
 
--- Clear highlight with <esc>
-keymap.set("n", "<esc>", "<cmd>nohlsearch<CR>", { desc = "Clear highlight" })
-
 -- Quit with <leader>-q
 keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
 
