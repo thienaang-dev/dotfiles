@@ -13,7 +13,7 @@ keymap.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Lazy" })
 keymap.set("n", "<leader>m", "<cmd>Mason<CR>", { desc = "Mason" })
 
 -- Close current buffer with <leader>-bd
-keymap.set("n", "<leader>bd", "<cmd>bd<CR>", { desc = "Buffer Delete" })
+keymap.set("n", "<leader>bd", "<cmd>bd<CR>", { desc = "Delete" })
 
 -- Restart LSP with <leader>rl
-vim.keymap.set("n", "<leader>rl", "<cmd>lsp restart<CR>", { desc = "Restart [L]SP" })
+vim.keymap.set("n", "<leader>rl", "<cmd>lsp restart<CR>", { desc = "LSP" })

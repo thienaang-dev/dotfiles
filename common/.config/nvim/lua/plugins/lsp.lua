@@ -13,17 +13,17 @@ return {
       callback = function(event)
         local map = function(keys, func, desc, mode)
           mode = mode or "n"
-          vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+          vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = desc })
         end
 
         -- Rename the variable under your cursor.
-        map("grn", vim.lsp.buf.rename, "[R]e[n]ame")
+        map("grn", vim.lsp.buf.rename, "Rename")
 
         -- Execute a code action, usually your cursor needs to be on top of an error
-        map("gra", vim.lsp.buf.code_action, "[G]oto Code [A]ction", { "n", "x" })
+        map("gra", vim.lsp.buf.code_action, "Code Action", { "n", "x" })
 
         -- Go to declration
-        map("grD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+        map("grD", vim.lsp.buf.declaration, "Declaration")
 
         -- The following two autocommands are used to highlight references of the
         -- word under your cursor when your cursor rests there for a little while.

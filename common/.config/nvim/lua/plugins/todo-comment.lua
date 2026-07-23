@@ -11,19 +11,19 @@ return {
       "n",
       "<leader>st",
       "<cmd>TodoQuickFix<CR>",
-      { desc = "Show all TODO" }
+      { desc = "All TODO" }
     )
     keymap.set(
       "n",
       "]t",
       function() require("todo-comments").jump_next() end,
-      { desc = "Next TODO comment" }
+      { desc = "TODO Comment" }
     )
     keymap.set(
       "n",
       "[t",
       function() require("todo-comments").jump_prev() end,
-      { desc = "Previous TODO comment" }
+      { desc = "TODO Comment" }
     )
   end,
 }
