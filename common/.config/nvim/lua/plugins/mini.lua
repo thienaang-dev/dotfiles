@@ -28,4 +28,14 @@ return {
       })
     end,
   },
+  {
+    "nvim-mini/mini.bufremove",
+    event = "BufReadPost",
+    version = "*",
+    config = function()
+      local buf = require('mini.bufremove')
+
+      vim.keymap.set("n", "<leader>bd", buf.delete, { desc = "Delete Buffer" })
+    end,
+  }
 }
