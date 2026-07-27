@@ -13,7 +13,7 @@ return {
       { "<leader>b", group = "Buffer" },
       { "<leader>c", group = "Code" },
       { "<leader>g", group = "Goto" },
-      { "<leader>h", group = "Git [H]unk", mode = { "n", "v" } }, -- Enable gitsigns recommended keymaps first
+      { "<leader>h", group = "Git Hunk", mode = { "n", "v" } }, -- Enable gitsigns recommended keymaps first
       { "<leader>r", group = "Restart" },
       { "gr", group = "LSP Actions", mode = { "n" } },
       { "gs", group = "Surround", mode = { "n", "v" } },
