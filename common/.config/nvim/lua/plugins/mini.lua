@@ -33,9 +33,60 @@ return {
     event = "BufReadPost",
     version = "*",
     config = function()
-      local buf = require('mini.bufremove')
+      local bufremove = require("mini.bufremove")
 
-      vim.keymap.set("n", "<leader>bd", buf.delete, { desc = "Delete Buffer" })
+      vim.keymap.set("n", "<leader>bd", bufremove.delete, { desc = "Delete" })
+      vim.keymap.set("n", "<leader>bw", bufremove.wipeout, { desc = "Wipeout" })
+      vim.keymap.set("n", "<leader>bl", function()
+        local all_bufs = vim.api.nvim_list_bufs()
+        local current_buf = vim.api.nvim_get_current_buf()
+
+        for _, buf in ipairs(all_bufs) do
+          if vim.fn.buflisted(buf) == 1 and buf < current_buf then bufremove.delete(buf, false) end
+        end
+      end, { desc = "Delete Left" })
+      vim.keymap.set("n", "<leader>bL", function()
+        local all_bufs = vim.api.nvim_list_bufs()
+        local current_buf = vim.api.nvim_get_current_buf()
+
+        for _, buf in ipairs(all_bufs) do
+          if vim.fn.buflisted(buf) == 1 and buf < current_buf then bufremove.wipeout(buf, false) end
+        end
+      end, { desc = "Wipeout Left" })
+      vim.keymap.set("n", "<leader>br", function()
+        local all_bufs = vim.api.nvim_list_bufs()
+        local current_buf = vim.api.nvim_get_current_buf()
+
+        for _, buf in ipairs(all_bufs) do
+          if vim.fn.buflisted(buf) == 1 and buf > current_buf then bufremove.delete(buf, false) end
+        end
+      end, { desc = "Delete Right" })
+      vim.keymap.set("n", "<leader>bR", function()
+        local all_bufs = vim.api.nvim_list_bufs()
+        local current_buf = vim.api.nvim_get_current_buf()
+
+        for _, buf in ipairs(all_bufs) do
+          if vim.fn.buflisted(buf) == 1 and buf > current_buf then bufremove.wipeout(buf, false) end
+        end
+      end, { desc = "Wipeout Right" })
+      vim.keymap.set("n", "<leader>bo", function()
+        local all_bufs = vim.api.nvim_list_bufs()
+        local current_buf = vim.api.nvim_get_current_buf()
+
+        for _, buf in ipairs(all_bufs) do
+          if vim.fn.buflisted(buf) == 1 and buf ~= current_buf then bufremove.delete(buf, false) end
+        end
+      end, { desc = "Delete Others" })
+      vim.keymap.set("n", "<leader>bO", function()
+        local all_bufs = vim.api.nvim_list_bufs()
+        local current_buf = vim.api.nvim_get_current_buf()
+
+        for _, buf in ipairs(all_bufs) do
+          if vim.fn.buflisted(buf) == 1 and buf ~= current_buf then
+            bufremove.wipeout(buf, false)
+          end
+        end
+      end, { desc = "Delete Others" })
     end,
-  }
+  },
 }

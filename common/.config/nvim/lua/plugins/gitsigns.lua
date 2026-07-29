@@ -44,41 +44,41 @@ return {
         "v",
         "<leader>hs",
         function() gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end,
-        { desc = "Hunk Stage" }
+        { desc = "Stage" }
       )
       map(
         "v",
         "<leader>hr",
         function() gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") }) end,
-        { desc = "Hunk Reset" }
+        { desc = "Reset" }
       )
       -- normal mode
-      map("n", "<leader>hs", gitsigns.stage_hunk, { desc = "Hunk Stage" })
-      map("n", "<leader>hr", gitsigns.reset_hunk, { desc = "Hunk Reset" })
-      map("n", "<leader>hS", gitsigns.stage_buffer, { desc = "Hunk Buffer Stage" })
-      map("n", "<leader>hR", gitsigns.reset_buffer, { desc = "Hunk Buffer Reset" })
-      map("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Hunk Preview" })
-      map("n", "<leader>hi", gitsigns.preview_hunk_inline, { desc = "Hunk Inline Preview" })
+      map("n", "<leader>hs", gitsigns.stage_hunk, { desc = "Stage" })
+      map("n", "<leader>hr", gitsigns.reset_hunk, { desc = "Reset" })
+      map("n", "<leader>hS", gitsigns.stage_buffer, { desc = "Buffer Stage" })
+      map("n", "<leader>hR", gitsigns.reset_buffer, { desc = "Buffer Reset" })
+      map("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Preview" })
+      map("n", "<leader>hi", gitsigns.preview_hunk_inline, { desc = "Inline Preview" })
       map(
         "n",
         "<leader>hb",
         function() gitsigns.blame_line({ full = true }) end,
-        { desc = "Hunk Blank Line" }
+        { desc = "Blank Line" }
       )
-      map("n", "<leader>hd", gitsigns.diffthis, { desc = "Hunk Diff" })
+      map("n", "<leader>hd", gitsigns.diffthis, { desc = "Diff" })
       map(
         "n",
         "<leader>hD",
         function() gitsigns.diffthis("@") end,
-        { desc = "Hunk Diff Against Last Commit" }
+        { desc = "Diff Against Last Commit" }
       )
       map(
         "n",
         "<leader>hQ",
         function() gitsigns.setqflist("all") end,
-        { desc = "Hunk All Quickfix List" }
+        { desc = "All Quickfix List" }
       )
-      map("n", "<leader>hq", gitsigns.setqflist, { desc = "Hunk Quickix List" })
+      map("n", "<leader>hq", gitsigns.setqflist, { desc = "Quickix List" })
       -- Toggles
       map("n", "<leader>tb", gitsigns.toggle_current_line_blame, { desc = "Toggle Line Blame" })
       map("n", "<leader>tw", gitsigns.toggle_word_diff, { desc = "Toggle Word Diff" })
