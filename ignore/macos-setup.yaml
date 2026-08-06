@@ -1,3 +1,4 @@
+---
 metadata:
   os: "macOS"
 
@@ -79,4 +80,11 @@ tasks:
     description: "Setup BetterDisplay"
     steps:
       1. Download via: https://betterdisplaymac.com/
+    reboot-required: false
+
+  - name: "Claude Code"
+    description: "Setup Claude Code - CLI AI"
+    command: |
+        curl -fsSL https://claude.ai/install.sh | bash &&
+        claude
     reboot-required: false
