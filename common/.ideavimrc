@@ -2,9 +2,6 @@
 let mapleader=" "
 let maplocalleader=" "
 
-" confirm to save changes before exiting modified buffer
-set formatoptions=jcroqlnt
-
 " enable line number
 set number
 
@@ -13,9 +10,6 @@ set relativenumber
 
 " set scrolloff line
 set scrolloff=10
-
-" round indent
-set shiftround
 
 " columns of context
 set sidescrolloff=8
@@ -31,11 +25,6 @@ set nowrap
 " enable copy/paste to/from system keyboard
 set clipboard+=unnamedplus
 
-" neovim settings that differ from vim
-set backspace=indent,eol,start
-set formatoptions=tcqj
-set listchars=tab:>\ ,trail:-,nbsp:+
-set shortmess=filnxtToOF
 
 " ========================================
 " Plugin Configurations
@@ -118,24 +107,6 @@ nmap <C-Left> <Action>(DecrementWindowWidth)
 let g:WhichKeyDesc_window_width_inc = "<C-Right> increase window width"
 nmap <C-Right> <Action>(IncrementWindowWidth)
 
-let g:WhichKeyDesc_buffer_prev = "[b Prev Buffer"
-nmap [b <Action>(PreviousTab)
-
-let g:WhichKeyDesc_buffer_next = "]b Next Buffer"
-nmap ]b <Action>(NextTab)
-
-let g:WhichKeyDesc_buffer_switch = "<leader>bb switch to other buffer"
-nnoremap <leader>bb <C-^>
-
-let g:WhichKeyDesc_buffer_delete = "<leader>bd Buffer Delete"
-nmap <leader>bd <Action>(CloseContent)
-
-let g:WhichKeyDesc_buffer_delete_others = "<leader>bo Buffer Delete Others"
-nmap <leader>bo <Action>(CloseAllEditorsButActive)
-
-let g:WhichKeyDesc_escape_clear = "<esc> Clear Highlight"
-nmap <silent> <esc> :nohlsearch<CR><esc>
-
 let g:WhichKeyDesc_lazy = "<leader>l Lazy"
 nmap <leader>l <Action>(WelcomeScreen.Plugins)
 
@@ -160,13 +131,13 @@ nmap ]d <Action>(GotoNextError)
 let g:WhichKeyDesc_diagnostic_prev = "[d Prev Diagnostic"
 nmap [d <Action>(GotoPreviousError)
 
-let g:WhichKeyDesc_git_ui = "<leader>hu Git [U]i"
+let g:WhichKeyDesc_git_ui = "<leader>hu Ui"
 nmap <leader>gg <Action>(ActivateCommitToolWindow)
 
-let g:WhichKeyDesc_git_blame = "<leader>hb Git [B]lame Line"
+let g:WhichKeyDesc_git_blame = "<leader>hb Blame Line"
 nmap <leader>hb <Action>(Annotate)
 
-let g:WhichKeyDesc_git_log = "<leader>hl Git [L]og"
+let g:WhichKeyDesc_git_log = "<leader>hl Log"
 nmap <leader>hl <Action>(Vcs.Show.Log)
 
 let g:WhichKeyDesc_changelog = "<leader>L Lazyvim Changelog"
@@ -183,38 +154,38 @@ nmap <leader><bar> <c-w>v
 " LSP Keymaps
 " ========================================
 
-let g:WhichKeyDesc_goto_definition = "grd Goto [D]efinition"
+let g:WhichKeyDesc_goto_definition = "grd Definition"
 nmap grd <Action>(GotoDeclaration)
 
 " Code Navigation
-let g:WhichKeyDesc_references = "grr Goto [R]eferences"
+let g:WhichKeyDesc_references = "grr References"
 nmap grr <Action>(FindUsages)
 
-let g:WhichKeyDesc_goto_implementation = "gri Goto [I]mplementation"
+let g:WhichKeyDesc_goto_implementation = "gri Implementation"
 nmap gri <Action>(GotoImplementation)
 
-let g:WhichKeyDesc_goto_type = "grt Goto [T]ype Definition"
+let g:WhichKeyDesc_goto_type = "grt Type Definition"
 nmap grt <Action>(GotoTypeDeclaration)
 
-let g:WhichKeyDesc_goto_declaration = "grD Goto [D]eclaration"
+let g:WhichKeyDesc_goto_declaration = "grD Declaration"
 nmap grD <Action>(GotoDeclaration)
 
 let g:WhichKeyDesc_signature_help_alt = "<C-k> Signature Help"
 imap <C-k> <C-o><Action>(ParameterInfo)
 
-let g:WhichKeyDesc_code_action = "<leader>gra Code Action"
-nmap <leader>gra <Action>(RefactoringMenu)
-vmap <leader>gra <Action>(RefactoringMenu)
+let g:WhichKeyDesc_code_action = "gra Code Action"
+nmap gra <Action>(RefactoringMenu)
+vmap gra <Action>(RefactoringMenu)
 
-let g:WhichKeyDesc_rename_file = "<leader>grN Rename File"
-nmap <leader>grN <Action>(RenameFile)
-if is_ide_rider | nmap <leader>cR <Action>(RiderRenameFile) | endif
+let g:WhichKeyDesc_rename_file = "grN Rename File"
+nmap grN <Action>(RenameFile)
+if is_ide_rider | nmap grN <Action>(RiderRenameFile) | endif
 
-let g:WhichKeyDesc_rename = "<leader>grn Rename"
-nmap <leader>grn <Action>(RenameElement)
+let g:WhichKeyDesc_rename = "grn Rename"
+nmap grn <Action>(RenameElement)
 
-let g:WhichKeyDesc_source_action = "<leader>grA Source Action"
-nmap <leader>grA <Action>(ShowIntentionActions)
+let g:WhichKeyDesc_source_action = "grA Source Action"
+nmap grA <Action>(ShowIntentionActions)
 
 let g:WhichKeyDesc_reference_next = "]] Next Reference"
 nmap ]] <Action>(GotoNextElementUnderCaretUsage)
@@ -227,17 +198,32 @@ nmap [[ <Action>(GotoPrevElementUnderCaretUsage)
 " Bufferline
 " ========================================
 
-let g:WhichKeyDesc_buffer_left = "<leader>bl Delete Buffers To The Left"
+let g:WhichKeyDesc_buffer_prev = "[b Prev Buffer"
+nmap [b <Action>(PreviousTab)
+
+let g:WhichKeyDesc_buffer_next = "]b Next Buffer"
+nmap ]b <Action>(NextTab)
+
+let g:WhichKeyDesc_buffer_switch = "<leader>bb Switch To Other"
+nnoremap <leader>bb <C-^>
+
+let g:WhichKeyDesc_buffer_delete = "<leader>bd Delete"
+nmap <leader>bd <Action>(CloseContent)
+
+let g:WhichKeyDesc_buffer_delete_others = "<leader>bo Delete Others"
+nmap <leader>bo <Action>(CloseAllEditorsButActive)
+
+let g:WhichKeyDesc_buffer_left = "<leader>bl Delete Left"
 nmap <leader>bl <Action>(CloseAllToTheLeft)
+
+let g:WhichKeyDesc_buffer_right = "<leader>br Delete Right"
+nmap <leader>br <Action>(CloseAllToTheRight)
 
 let g:WhichKeyDesc_buffer_pin = "<leader>bp Toggle Pin"
 nmap <leader>bp <Action>(PinActiveTabToggle)
 
 let g:WhichKeyDesc_buffer_pin_delete = "<leader>bP Delete Non-pinned Buffers"
 nmap <leader>bP <Action>(CloseAllUnpinnedEditors)
-
-let g:WhichKeyDesc_buffer_right = "<leader>br Delete Buffers To The Right"
-nmap <leader>br <Action>(CloseAllToTheRight)
 
 
 " ========================================
@@ -323,7 +309,7 @@ nmap <leader>sm :marks<cr>
 let g:WhichKeyDesc_search_quickfix = "<leader>sq Quickfix List"
 nmap <leader>sq <Action>(ActivateProblemsViewToolWindow)
 
-let g:WhichKeyDesc_search_symbol = "<leader>ss Goto Symbol"
+let g:WhichKeyDesc_search_symbol = "<leader>ss Symbol"
 nmap <leader>ss <Action>(GotoSymbol)
 
 let g:WhichKeyDesc_search_word = "<leader>sw Visual Selection Or Word"
@@ -376,9 +362,6 @@ imap <C-y> <Action>(EditorChooseLookupItem)
 nmap <C-s> <Action>(SaveAll)
 vmap <C-s> <Action>(SaveAll)
 
-" Select all
-nmap <C-a> gg<S-v>G
-vmap <C-a> gg<S-v>G
 
 " ========================================
 " Neovim Default Mappings
