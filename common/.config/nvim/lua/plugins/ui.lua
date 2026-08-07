@@ -35,6 +35,14 @@ return {
                 position = "right",
               },
             },
+            win = {
+              list = {
+                wo = {
+                  number = true,
+                  relativenumber = true,
+                },
+              },
+            },
           },
           files = {
             hidden = true, -- Show dotfiles/hidden files
