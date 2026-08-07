@@ -1,4 +1,0 @@
-return {
-  html = {},
-  cssls = {},
-}

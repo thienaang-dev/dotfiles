@@ -1,4 +1,0 @@
-return {
-  ["json-lsp"] = {},
-  jsonlint = {},
-}

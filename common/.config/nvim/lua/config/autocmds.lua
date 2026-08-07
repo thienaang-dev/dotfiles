@@ -1,4 +1,4 @@
--- Clear undo
+-- Clear undo history
 vim.api.nvim_create_user_command("ClearUndo", function()
   local old_undolevels = vim.opt_local.undolevels:get()
   vim.opt_local.undolevels = -1
