@@ -1,379 +1,52 @@
-" set leader key
-let mapleader=" "
-let maplocalleader=" "
-
-" enable line number
-set number
-
-" enable relative line numbers
-set relativenumber
-
-" set scrolloff line
-set scrolloff=10
-
-" columns of context
-set sidescrolloff=8
-
-" which-key says to set this high, or set notimeout
-set timeoutlen=10000
-set notimeout
-set undolevels=10000
-
-" disable line wrap
-set nowrap
-
-" enable copy/paste to/from system keyboard
-set clipboard+=unnamedplus
-
-
 " ========================================
-" Plugin Configurations
+" Load Configuration Modules
 " ========================================
 
-" Commentary - gcc and gc<action> mappings
-Plug 'tpope/vim-commentary'
+" Core settings (leader keys, visual settings, Neovim compatibility)
+source ~/ideavim/settings.vim
 
-" Surround - Emulate LazyVim mini.surround mappings
-Plug 'tpope/vim-surround'
-let g:surround_no_mappings = 1
-let g:WhichKeyDesc_surround = "gs Surround"
-let g:WhichKeyDesc_surround_add = "gsa Add Surrounding"
-nmap gsa <Plug>YSurround
-xmap gsa <Plug>VSurround
+" Plugin configurations (commentary, surround, easymotion, which-key, text objects)
+source ~/ideavim/plugins.vim
 
-let g:WhichKeyDesc_surround_delete = "gsd Delete Surrounding"
-nmap gsd <Plug>DSurround
+" Non-leader navigation keymaps (<C-hjkl>, [d, ]d, etc.)
+source ~/ideavim/navigation.vim
 
-let g:WhichKeyDesc_surround_replace = "gsr Replace Surrounding"
-nmap gsr <Plug>CSurround
+" LSP keymaps (gd, gr, gI, etc.)
+source ~/ideavim/lsp.vim
 
+" Leader key groups (organized by WhichKey groups)
+let g:WhichKeyDesc_leader_b = "<leader>b +buffer"
+source ~/ideavim/buffer.vim
 
-" EasyMotion - Use s to jump anywhere (similar to flash.nvim in LazyVim)
-set easymotion
-let g:EasyMotion_do_mapping = 0
-let g:WhichKeyDesc_easymotion = "s Flash"
-nmap s <Plug>(easymotion-s)
-xmap s <Plug>(easymotion-s)
-omap s <Plug>(easymotion-s)
+let g:WhichKeyDesc_leader_c = "<leader>c +code"
+source ~/ideavim/code.vim
 
+let g:WhichKeyDesc_leader_d = "<leader>d +debug"
+source ~/ideavim/debug.vim
 
-" Which-Key plugin
-set which-key
+let g:WhichKeyDesc_leader_f = "<leader>f +file/find"
+source ~/ideavim/file.vim
 
-" Which-Key group descriptions
-let g:WhichKeyDesc_leader_b = "<leader>b Buffer"
-let g:WhichKeyDesc_leader_c = "<leader>c Code"
-let g:WhichKeyDesc_leader_h = "<leader>h Git Hunk"
-let g:WhichKeyDesc_leader_q = "<leader>q Quit"
-let g:WhichKeyDesc_leader_s = "<leader>s Search"
+let g:WhichKeyDesc_leader_g = "<leader>g +git"
+source ~/ideavim/git.vim
 
-" Additional plugins
-set highlightedyank
-set matchit  " Extended matching - A Neovim default plugin
-set textobj-indent  " Indent text objects (ai, ii, aI, iI)
-set textobj-entire  " Entire file text objects (ag, ig)
+let g:WhichKeyDesc_leader_s = "<leader>s +search"
+source ~/ideavim/search.vim
 
-" NERDtree
-set nerdtree
+let g:WhichKeyDesc_leader_t = "<leader>t +test"
+source ~/ideavim/test.vim
 
+let g:WhichKeyDesc_leader_u = "<leader>u +ui"
+source ~/ideavim/ui.vim
 
-" ========================================
-" Key Mappings
-" ========================================
+let g:WhichKeyDesc_leader_w = "<leader>w +windows"
+source ~/ideavim/window.vim
 
-" Variables for custom keymaps based on the current IDE flavor (:echo &ide).
-" https://github.com/JetBrains/ideavim/discussions/375
-let is_ide_rider = &ide == 'JetBrains Rider'
+let g:WhichKeyDesc_leader_x = "<leader>x +diagnostics/quickfix"
+source ~/ideavim/diagnostics.vim
 
-" https://www.lazyvim.org/configuration/keymaps
+let g:WhichKeyDesc_leader_tab = "<leader><tab> +tabs"
+source ~/ideavim/tabs.vim
 
-" To track Action-IDs
-" :action VimFindActionIdAction
-
-
-" ========================================
-" General Keymaps
-" ========================================
-
-let g:WhichKeyDesc_window_height_inc = "<C-Up> increase window height"
-nmap <C-Up> <Action>(IncrementWindowHeight)
-
-let g:WhichKeyDesc_window_height_dec = "<C-Down> decrease window height"
-nmap <C-Down> <Action>(DecrementWindowHeight)
-
-let g:WhichKeyDesc_window_width_dec = "<C-Left> decrease window width"
-nmap <C-Left> <Action>(DecrementWindowWidth)
-
-let g:WhichKeyDesc_window_width_inc = "<C-Right> increase window width"
-nmap <C-Right> <Action>(IncrementWindowWidth)
-
-let g:WhichKeyDesc_lazy = "<leader>l Lazy"
-nmap <leader>l <Action>(WelcomeScreen.Plugins)
-
-let g:WhichKeyDesc_format = "<leader>cf Code Format"
-nmap <leader>cf <Action>(ReformatCode)
-vmap <leader>cf <Action>(ReformatCode)
-
-let g:WhichKeyDesc_format = "<leader>cv Toggle Rendered View"
-nmap <leader>cv <Action>(ToggleRenderedDocPresentation)
-vmap <leader>cv <Action>(ToggleRenderedDocPresentation)
-
-let g:WhichKeyDesc_format = "<leader>cV Toggle Rendered View For All"
-nmap <leader>cV <Action>(ToggleRenderedDocPresentationForAll)
-vmap <leader>cV <Action>(ToggleRenderedDocPresentationForAll)
-
-let g:WhichKeyDesc_diagnostics_line = "<leader>cd Line Diagnostics"
-nmap <leader>cd <Action>(ActivateProblemsViewToolWindow)
-
-let g:WhichKeyDesc_diagnostic_next = "]d Next Diagnostic"
-nmap ]d <Action>(GotoNextError)
-
-let g:WhichKeyDesc_diagnostic_prev = "[d Prev Diagnostic"
-nmap [d <Action>(GotoPreviousError)
-
-let g:WhichKeyDesc_git_ui = "<leader>hu Ui"
-nmap <leader>gg <Action>(ActivateCommitToolWindow)
-
-let g:WhichKeyDesc_git_blame = "<leader>hb Blame Line"
-nmap <leader>hb <Action>(Annotate)
-
-let g:WhichKeyDesc_git_log = "<leader>hl Log"
-nmap <leader>hl <Action>(Vcs.Show.Log)
-
-let g:WhichKeyDesc_changelog = "<leader>L Lazyvim Changelog"
-nmap <leader>L <Action>(WhatsNewAction)
-
-let g:WhichKeyDesc_split_below = "<leader>- Split Window Below"
-nmap <leader>- <c-w>s
-
-let g:WhichKeyDesc_split_right = "<leader>| Split Window Right"
-nmap <leader><bar> <c-w>v
-
-
-" ========================================
-" LSP Keymaps
-" ========================================
-
-let g:WhichKeyDesc_goto_definition = "grd Definition"
-nmap grd <Action>(GotoDeclaration)
-
-" Code Navigation
-let g:WhichKeyDesc_references = "grr References"
-nmap grr <Action>(FindUsages)
-
-let g:WhichKeyDesc_goto_implementation = "gri Implementation"
-nmap gri <Action>(GotoImplementation)
-
-let g:WhichKeyDesc_goto_type = "grt Type Definition"
-nmap grt <Action>(GotoTypeDeclaration)
-
-let g:WhichKeyDesc_goto_declaration = "grD Declaration"
-nmap grD <Action>(GotoDeclaration)
-
-let g:WhichKeyDesc_signature_help_alt = "<C-k> Signature Help"
-imap <C-k> <C-o><Action>(ParameterInfo)
-
-let g:WhichKeyDesc_code_action = "gra Code Action"
-nmap gra <Action>(RefactoringMenu)
-vmap gra <Action>(RefactoringMenu)
-
-let g:WhichKeyDesc_rename_file = "grN Rename File"
-nmap grN <Action>(RenameFile)
-if is_ide_rider | nmap grN <Action>(RiderRenameFile) | endif
-
-let g:WhichKeyDesc_rename = "grn Rename"
-nmap grn <Action>(RenameElement)
-
-let g:WhichKeyDesc_source_action = "grA Source Action"
-nmap grA <Action>(ShowIntentionActions)
-
-let g:WhichKeyDesc_reference_next = "]] Next Reference"
-nmap ]] <Action>(GotoNextElementUnderCaretUsage)
-
-let g:WhichKeyDesc_reference_prev = "[[ Prev Reference"
-nmap [[ <Action>(GotoPrevElementUnderCaretUsage)
-
-
-" ========================================
-" Bufferline
-" ========================================
-
-let g:WhichKeyDesc_buffer_prev = "[b Prev Buffer"
-nmap [b <Action>(PreviousTab)
-
-let g:WhichKeyDesc_buffer_next = "]b Next Buffer"
-nmap ]b <Action>(NextTab)
-
-let g:WhichKeyDesc_buffer_switch = "<leader>bb Switch To Other"
-nnoremap <leader>bb <C-^>
-
-let g:WhichKeyDesc_buffer_delete = "<leader>bd Delete"
-nmap <leader>bd <Action>(CloseContent)
-
-let g:WhichKeyDesc_buffer_delete_others = "<leader>bo Delete Others"
-nmap <leader>bo <Action>(CloseAllEditorsButActive)
-
-let g:WhichKeyDesc_buffer_left = "<leader>bl Delete Left"
-nmap <leader>bl <Action>(CloseAllToTheLeft)
-
-let g:WhichKeyDesc_buffer_right = "<leader>br Delete Right"
-nmap <leader>br <Action>(CloseAllToTheRight)
-
-let g:WhichKeyDesc_buffer_pin = "<leader>bp Toggle Pin"
-nmap <leader>bp <Action>(PinActiveTabToggle)
-
-let g:WhichKeyDesc_buffer_pin_delete = "<leader>bP Delete Non-pinned Buffers"
-nmap <leader>bP <Action>(CloseAllUnpinnedEditors)
-
-
-" ========================================
-" Explorer/Tree Keymaps
-" ========================================
-
-let g:WhichKeyDesc_buffer_explorer = "<leader>be Buffer Explorer"
-nmap <leader>be <Action>(ActivateProjectToolWindow)
-
-let g:WhichKeyDesc_explorer = "<leader>e Explorer Neotree"
-nmap <leader>e <Action>(SelectInProjectView)
-
-let g:WhichKeyDesc_git_explorer = "<leader>ge Git Explorer"
-nmap <leader>ge <Action>(ActivateVersionControlToolWindow)
-
-
-" ========================================
-" Notifications
-" ========================================
-
-let g:WhichKeyDesc_search_dismiss = "<leader>snd Dismiss All"
-nmap <leader>snd <Action>(ClearAllNotifications)
-
-
-" ========================================
-" Search/Find Keymaps (Telescope-like)
-" ========================================
-
-let g:WhichKeyDesc_find_files = "<leader><space> Find Files (root dir)"
-nmap <leader><space> <Action>(GotoFile)
-
-let g:WhichKeyDesc_buffers = "<leader>, Buffers"
-nmap <leader>, <Action>(Switcher)
-
-let g:WhichKeyDesc_grep = "<leader>/ Grep (root dir)"
-nmap <leader>/ <Action>(FindInPath)
-
-let g:WhichKeyDesc_command_history = "<leader>: Command History"
-nmap <leader>: :history<cr>
-
-let g:WhichKeyDesc_find_buffers = "<leader>sb Buffers"
-nmap <leader>sb <Action>(Switcher)
-
-let g:WhichKeyDesc_find_config = "<leader>sc Find Config File"
-nmap <leader>sc <Action>(GotoFile)
-
-let g:WhichKeyDesc_find_files_alt = "<leader>sf Find Files"
-nmap <leader>sf <Action>(GotoFile)
-
-let g:WhichKeyDesc_find_recent = "<leader>s. Recent"
-nmap <leader>s. <Action>(RecentFiles)
-
-let g:WhichKeyDesc_search_registers = "<leader>s\" Registers"
-nmap <leader>s" :registers<cr>
-
-let g:WhichKeyDesc_search_buffer = "<leader>sb Buffer Lines"
-nmap <leader>sb <Action>(Switcher)
-
-let g:WhichKeyDesc_search_command_history = "<leader>sc Command History"
-nmap <leader>sc :history<cr>
-
-let g:WhichKeyDesc_search_diagnostics = "<leader>sd Diagnostics"
-nmap <leader>sd <Action>(ActivateProblemsViewToolWindow)
-
-let g:WhichKeyDesc_search_grep = "<leader>sg Grep"
-nmap <leader>sg <Action>(FindInPath)
-
-let g:WhichKeyDesc_search_help = "<leader>sh Help Pages"
-nmap <leader>sh <Action>(HelpTopics)
-
-let g:WhichKeyDesc_search_jumps = "<leader>sj Jumps"
-nmap <leader>sj <Action>(RecentLocations)
-
-let g:WhichKeyDesc_search_keymaps = "<leader>sk Keymaps"
-nmap <leader>sk :map<cr>
-
-let g:WhichKeyDesc_search_location_list = "<leader>sl Location List"
-nmap <leader>sl <Action>(ActivateProblemsViewToolWindow)
-
-let g:WhichKeyDesc_search_marks = "<leader>sm Marks"
-nmap <leader>sm :marks<cr>
-
-let g:WhichKeyDesc_search_quickfix = "<leader>sq Quickfix List"
-nmap <leader>sq <Action>(ActivateProblemsViewToolWindow)
-
-let g:WhichKeyDesc_search_symbol = "<leader>ss Symbol"
-nmap <leader>ss <Action>(GotoSymbol)
-
-let g:WhichKeyDesc_search_word = "<leader>sw Visual Selection Or Word"
-nmap <leader>sw mzviw<Action>(FindInPath)<esc>`z
-vmap <leader>sw <Action>(FindInPath)
-
-
-" ========================================
-" Todo Comments Keymaps
-" ========================================
-
-let g:WhichKeyDesc_search_todo = "<leader>st Show All TODO"
-nmap <leader>st <Action>(ActivateTODOToolWindow)
-
-let g:WhichKeyDesc_todo_prev = "[t Previous TODO Comment"
-nmap [t ?\(TODO\|FIX\|HACK\|WARN\|PERF\|NOTE\|TEST\):<cr>
-
-let g:WhichKeyDesc_todo_next = "]t Next TODO Comment"
-nmap ]t /\(TODO\|FIX\|HACK\|WARN\|PERF\|NOTE\|TEST\):<cr>
-
-
-" ========================================
-" Database Keymaps
-" ========================================
-
-let g:WhichKeyDesc_database_ui = "<leader>D Toggle DBUI"
-nmap <leader>D <Action>(ActivateDatabaseToolWindow)
-
-
-" ========================================
-" Buffer/Selection Keymaps
-" ========================================
-
-" Increment / Decrement Selection
-sethandler <C-Space> n:vim v:vim i:ide
-let g:WhichKeyDesc_selection_increment = "<C-Space> Increment Selection"
-nmap <C-Space> <Action>(EditorSelectWord)
-vmap <C-Space> <Action>(EditorSelectWord)
-
-let g:WhichKeyDesc_selection_decrement = "<BS> Decrement Selection"
-vmap <BS> <Action>(EditorUnSelectWord)
-
-
-" ========================================
-" Custom Mappings
-" ========================================
-imap <C-y> <Action>(EditorChooseLookupItem)
-
-" Save all buffers
-nmap <C-s> <Action>(SaveAll)
-vmap <C-s> <Action>(SaveAll)
-
-
-" ========================================
-" Neovim Default Mappings
-" ========================================
-" https://neovim.io/doc/user/vim_diff.html#_default-mappings
-
-nnoremap Y y$
-inoremap <C-U> <C-G>u<C-U>
-inoremap <C-W> <C-G>u<C-W>
-" Q isn't exactly the same.
-nnoremap Q @@
-
-" Keep selection active after indenting in visual mode
-vnoremap > >gv
-vnoremap < <gv
+" Neovim defaults, smart selection, and misc keymaps
+source ~/ideavim/defaults.vim
