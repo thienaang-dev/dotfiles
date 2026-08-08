@@ -19,16 +19,4 @@ return {
       inlay_hints = { enabled = false },
     },
   },
-  {
-    "mfussenegger/nvim-jdtls",
-    opts = {
-      settings = {
-        java = {
-          saveActions = {
-            organizeImports = true,
-          }
-        }
-      }
-    }
-  },
 }
