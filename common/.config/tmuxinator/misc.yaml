@@ -1,8 +1,6 @@
 name: misc
-root: ~/repositories/projects/
+root: ~/repositories/projects/store
 
 windows:
-  - front-end:
-      root: ~/repositories/projects/
   - back-end:
-      root: ~/repositories/projects/
+      root: ~/repositories/projects/store
