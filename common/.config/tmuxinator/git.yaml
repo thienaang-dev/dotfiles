@@ -1,6 +1,8 @@
 name: git
-root: ~/repositories/projects/store
+root: ~/repositories/projects
 
 windows:
+  - front-end:
+      root: ~/repositories/projects
   - back-end:
-      root: ~/repositories/projects/store
+      root: ~/repositories/projects
