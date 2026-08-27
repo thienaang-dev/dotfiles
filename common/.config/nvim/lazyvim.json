@@ -1,7 +1,6 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.editor.mini-files",
-    "lazyvim.plugins.extras.lang.angular"
+    "lazyvim.plugins.extras.editor.mini-files"
   ],
   "install_version": 8,
   "news": {
