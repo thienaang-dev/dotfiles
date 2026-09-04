@@ -5,7 +5,7 @@ font-style = Medium
 font-style-bold = ExtraBold
 font-style-italic = Medium Italic
 font-style-bold-italic = ExtraBold Italic
-font-feature = ss01, ss02
+font-feature = ss01, ss02, cv01
 font-size = 12
 adjust-cell-height = 20%
 
