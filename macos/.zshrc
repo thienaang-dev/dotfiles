@@ -48,11 +48,19 @@ alias trl="tmux source $HOME/.config/tmux/tmux.conf"
 alias mux="tmuxinator"
 alias muxst="tmuxinator start server && tmuxinator start code && tmuxinator start git && tmuxinator start misc"
 
-# Deletes all local branch except branch in parameter
+# Deletes all local branches except branch in parameter
 gbdae() {
   if [ -n "$1" ]
   then
     gb | grep -v "$1" | xargs git branch -D
+  fi
+}
+
+# Deletes all local branches that match pattern
+gbdam() {
+  if [ -n "$1" ]
+  then
+    gb | grep "$1" | xargs git branch -D
   fi
 }
 

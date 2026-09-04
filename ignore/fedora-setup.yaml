@@ -1,3 +1,4 @@
+---
 metadata:
   os: "Fedora"
   hostname: "zendora"
@@ -8,11 +9,28 @@ tasks:
     command: sudo dnf upgrade
     reboot-required: false
 
+  - name: "Directories"
+    description: "Setup necessary directories"
+    command: mkdir -p ~/repositories/{builds,projects,learning}
+    reboot-required: false
+
   - name: "Packages"
     description: "Setup all necessary packages for development"
     command: |
-      sudo dnf -y install gh stow tmux nodejs java-25-openjdk npm neovim gcc make git ripgrep fd-find unzip &&
+      sudo dnf -y install gh stow tmux nodejs java-25-openjdk npm gcc make git ripgrep fd-find unzip &&
       sudo flatpak install -y postman spotify
+    reboot-required: false
+
+  - name: "Neovim"
+    description: "Setup Neovim - text editor"
+    command: |
+      sudo dnf -y install ninja-build cmake gcc make gettext curl glibc-gconv-extra git tree-sitter-cli &&
+      cd ~/repositories/builds &&
+      git clone https://github.com/neovim/neovim &&
+      cd neovim &&
+      git checkout stable &&
+      make CMAKE_BUILD_TYPE=Release &&
+      sudo make install
     reboot-required: false
 
   - name: "Ghostty"
@@ -103,4 +121,11 @@ tasks:
         curl -s "https://get.sdkman.io" | bash &&
         source "$HOME/.sdkman/bin/sdkman-init.sh" &&
         sdk install kotlin
+    reboot-required: false
+
+  - name: "Claude Code"
+    description: "Setup Claude Code - CLI AI"
+    command: |
+        curl -fsSL https://claude.ai/install.sh | bash &&
+        claude
     reboot-required: false

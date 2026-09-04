@@ -1,3 +1,4 @@
+---
 metadata:
   os: "macOS"
 
@@ -7,12 +8,29 @@ tasks:
     command: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     reboot-required: false
 
+  - name: "Directories"
+    description: "Setup necessary directories"
+    command: mkdir -p ~/repositories/{builds,projects,learning}
+    reboot-required: false
+
   - name: "Packages"
     description: "Setup all necessary packages for development"
     command: |
-      brew install git gh stow tmux node openjdk neovim gcc make ripgrep fd unzip tmuxinator &&
+      brew install git gh stow tmux node openjdk gcc make ripgrep fd unzip tmuxinator &&
       brew install --cask ghostty
     reboot-required: true
+
+  - name: "Neovim"
+    description: "Setup Neovim - text editor"
+    command: |
+      brew install ninja cmake gettext curl git tree-sitter-cli &&
+      cd ~/repositories/builds &&
+      git clone https://github.com/neovim/neovim &&
+      cd neovim &&
+      git checkout stable &&
+      make CMAKE_BUILD_TYPE=Release &&
+      sudo make install
+    reboot-required: false
 
   - name: "Zsh"
     description: "Setup zsh shell"
@@ -62,4 +80,11 @@ tasks:
     description: "Setup BetterDisplay"
     steps:
       1. Download via: https://betterdisplaymac.com/
+    reboot-required: false
+
+  - name: "Claude Code"
+    description: "Setup Claude Code - CLI AI"
+    command: |
+        curl -fsSL https://claude.ai/install.sh | bash &&
+        claude
     reboot-required: false

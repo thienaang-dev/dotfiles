@@ -1,8 +1,8 @@
 name: leetcode
-root: ~/repositories/leetcode
+root: ~/repositories/projects/leetcode
 
 windows:
   - server:
-      root: ~/repositories/leetcode
+      root: ~/repositories/projects/leetcode
   - code:
-      root: ~/repositories/leetcode
+      root: ~/repositories/projects/leetcode
